@@ -1,5 +1,5 @@
-David, 1, 13 11 2006, Valledupar, 3134697894, david@recocha.edu.co, Kra 92#74B-08RobledoMedellínNoneNone 
-Carlos, 2, 25 5 1992, Bogotá, 3123456789, carlos@ejemplo.com, Av. Chile#21A-12TeusaquilloBogotáNoneNone 
-Ana, 3, 7 8 1990, Medellín, 3145678901, ana@correo.com, Calle 45#23B-09LaurelesMedellínNoneNone 
-Luis, 4, 10 12 1985, Cali, 3156789012, luis@ejemplo.com, Calle 75#14A-11San FernandoCaliNoneNone 
-Laura, 5, 15 3 1995, Barranquilla, 3178901234, laura@correo.com, Carrera 50#9B-03CentroBarranquillaNoneNone 
+David, 1, 13 11 2006, Valledupar, 3134697894, david@recocha.edu.co, Kra 92#74B-08 Robledo Medellín None None 
+Carlos, 2, 25 5 1992, Bogotá, 3123456789, carlos@ejemplo.com, Av. Chile#21A-12 Teusaquillo Bogotá None None 
+Ana, 3, 7 8 1990, Medellín, 3145678901, ana@correo.com, Calle 45#23B-09 Laureles Medellín None None 
+Luis, 4, 10 12 1985, Cali, 3156789012, luis@ejemplo.com, Calle 75#14A-11 San Fernando Cali None None 
+Laura, 5, 15 3 1995, Barranquilla, 3178901234, laura@correo.com, Carrera 50#9B-03 Centro Barranquilla None None 

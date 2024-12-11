@@ -42,8 +42,24 @@ class Agenda():
         with open("Agenda.txt", "r") as archivo:
             for i in archivo:
                 listaUsuarios = i.split(",")
-                usuario = Usuario(str(listaUsuarios[0]),int(listaUsuarios[1]),str(listaUsuarios[3]),int(listaUsuarios[4]),str(listaUsuarios[5])) 
-                Usuario.setFechaNacimiento(listaUsuarios[2])
-                Usuario.setDir(listaUsuarios[6])
+                usuario = Usuario(str(listaUsuarios[0]),int(listaUsuarios[1]),str(listaUsuarios[3]),int(listaUsuarios[4]),str(listaUsuarios[5]))
+            
+                x = listaUsuarios[2].split()
+                dd = x[0]
+                mm = x[1]
+                aa = x[2]
+                x1 = Fecha(dd,mm,aa)
+                Usuario.setFechaNacimiento(x1)
+                
+                y = listaUsuarios[6].split()
+                calle = y[0]
+                nomenclatura = y[1] 
+                barrio = y[2]
+                ciudad = y[3]
+                edificio = y[4]
+                apto = y[5]
+                y1 = Direccion(calle, nomenclatura, barrio, ciudad, edificio, apto)
+                Usuario.setDir(y1)
+                
                 self.__registro.append(usuario)
                 self.__no_reg += 1
