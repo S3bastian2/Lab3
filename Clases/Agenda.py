@@ -31,12 +31,12 @@ class Agenda():
             self.__no_reg -= 1 #Disminuimos el tamaño del arreglo
             return True #Devolvemos Verdadero tras haberse completado todo el proceso
         
-    def toFile(self, archivo):
-        f = open(archivo, "w")
+    def toFile(self):
+        archivo = open("Agenda.txt", "w")
         for objeto in self.__registro:
             if objeto != None:
-                f.write(f"{Usuario.getNombre()}, {Usuario.getId()}, {Usuario.getFechaNacimiento()}, {Usuario.getCiudadNacimiento()}, {Usuario.getTelefono()}, {Usuario.getEmail()}, {Usuario.getDir()}")
-        f.close()
+                archivo.write(f"{Usuario.getNombre(objeto)}, {Usuario.getId(objeto)}, {Usuario.getFechaNacimiento(objeto)}, {Usuario.getCiudadNacimiento(objeto)}, {Usuario.getTelefono(objeto)}, {Usuario.getEmail(objeto)}, {Usuario.getDir(objeto)} \n")
+        archivo.close()
     
     def importar(self, archivo):
         with open("Agenda.txt", "r") as archivo:
