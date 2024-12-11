@@ -31,6 +31,9 @@ class Agenda():
             self.__no_reg -= 1 #Disminuimos el tamaño del arreglo
             return True #Devolvemos Verdadero tras haberse completado todo el proceso
         
+    def getRegistro(self):
+        return self.__registro
+        
     def toFile(self):
         archivo = open("Agenda.txt", "w")
         for objeto in self.__registro:
@@ -38,8 +41,10 @@ class Agenda():
                 archivo.write(f"{Usuario.getNombre(objeto)}, {Usuario.getId(objeto)}, {Usuario.getFechaNacimiento(objeto)}, {Usuario.getCiudadNacimiento(objeto)}, {Usuario.getTelefono(objeto)}, {Usuario.getEmail(objeto)}, {Usuario.getDir(objeto)} \n")
         archivo.close()
     
-    def importar(self, archivo):
+    def importar(self):
         with open("Agenda.txt", "r") as archivo:
+            Usus = []
+            x = 0
             for i in archivo:
                 listaUsuarios = i.split(",")
                 usuario = Usuario(str(listaUsuarios[0]),int(listaUsuarios[1]),str(listaUsuarios[3]),int(listaUsuarios[4]),str(listaUsuarios[5]))
@@ -48,8 +53,7 @@ class Agenda():
                 dd = x[0]
                 mm = x[1]
                 aa = x[2]
-                x1 = Fecha(dd,mm,aa)
-                Usuario.setFechaNacimiento(x1)
+                usuario.setFechaNacimiento(Fecha(dd,mm,aa))
                 
                 y = listaUsuarios[6].split()
                 calle = y[0]
@@ -58,8 +62,7 @@ class Agenda():
                 ciudad = y[3]
                 edificio = y[4]
                 apto = y[5]
-                y1 = Direccion(calle, nomenclatura, barrio, ciudad, edificio, apto)
-                Usuario.setDir(y1)
+                usuario.setDir(Direccion(calle, nomenclatura, barrio, ciudad, edificio, apto))
                 
-                self.__registro.append(usuario)
-                self.__no_reg += 1
+                Usus.append(usuario)
+        return Agenda(Usus, len(Usus))
