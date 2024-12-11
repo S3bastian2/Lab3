@@ -36,7 +36,7 @@ class Agenda():
         return self.__registro
         
     def toFile(self):
-        if os.path.exists("/Agenda.txt"):
+        if os.path.exists("Agenda.txt"):
             archivo = open("Agenda2.txt", "w")
             for objeto in self.__registro:
                 if objeto != None:

@@ -6,4 +6,4 @@ for i in range(len(r)):
     print(r[i])
 
 A.eliminar(5)
-A.toFile
+A.toFile()
