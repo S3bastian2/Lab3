@@ -1,4 +1,4 @@
-from Clases.Usuario import Usuario
+from Usuario import Usuario
 class Agenda():
     def __init__(self, registro = None, no_reg = 0):
         self.__registro = registro if registro is not None else []

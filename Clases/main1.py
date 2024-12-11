@@ -1,7 +1,7 @@
-from Clases.Fecha import Fecha
-from Clases.Direccion import Direccion
-from Clases.Agenda import Agenda
-from Clases.Usuario import Usuario
+from Fecha import Fecha
+from Direccion import Direccion
+from Agenda import Agenda
+from Usuario import Usuario
 
 u1 = Usuario("David", 1, "Valledupar", 3134697894, "david@recocha.edu.co")
 f1 = Fecha(13, 11, 2006)

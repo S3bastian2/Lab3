@@ -1,5 +1,5 @@
-from Clases.Fecha import *
-from Clases.Direccion import *
+from Fecha import *
+from Direccion import *
 
 class Usuario():
     def __init__(self, nombre, id, ciudad_nacimiento, tel, email):
