@@ -1,3 +1,4 @@
+import os
 from Usuario import *
 class Agenda():
     def __init__(self, registro = None, no_reg = 0):
@@ -35,11 +36,19 @@ class Agenda():
         return self.__registro
         
     def toFile(self):
-        archivo = open("Agenda.txt", "w")
-        for objeto in self.__registro:
-            if objeto != None:
-                archivo.write(f"{Usuario.getNombre(objeto)}, {Usuario.getId(objeto)}, {Usuario.getFechaNacimiento(objeto)}, {Usuario.getCiudadNacimiento(objeto)}, {Usuario.getTelefono(objeto)}, {Usuario.getEmail(objeto)}, {Usuario.getDir(objeto)} \n")
-        archivo.close()
+        if os.path.exists("/Agenda.txt"):
+            archivo = open("Agenda2.txt", "w")
+            for objeto in self.__registro:
+                if objeto != None:
+                    archivo.write(f"{Usuario.getNombre(objeto)}, {Usuario.getId(objeto)}, {Usuario.getFechaNacimiento(objeto)}, {Usuario.getCiudadNacimiento(objeto)}, {Usuario.getTelefono(objeto)}, {Usuario.getEmail(objeto)}, {Usuario.getDir(objeto)} \n")
+            archivo.close()
+            
+        else:    
+            archivo = open("Agenda.txt", "w")
+            for objeto in self.__registro:
+                if objeto != None:
+                    archivo.write(f"{Usuario.getNombre(objeto)}, {Usuario.getId(objeto)}, {Usuario.getFechaNacimiento(objeto)}, {Usuario.getCiudadNacimiento(objeto)}, {Usuario.getTelefono(objeto)}, {Usuario.getEmail(objeto)}, {Usuario.getDir(objeto)} \n")
+            archivo.close()
     
     def importar(self):
         with open("Agenda.txt", "r") as archivo:
