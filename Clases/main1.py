@@ -40,4 +40,4 @@ u5.setDir(d5)
 
 A1 = Agenda([u1, u2, u3, u4, u5], 5)
 
-print(A1.buscar(3))
+print(A1.buscar(5))

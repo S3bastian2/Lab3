@@ -1,14 +1,14 @@
-from Usuario import Usuario
+from Usuario import *
 class Agenda():
     def __init__(self, registro = None, no_reg = 0):
         self.__registro = registro if registro is not None else []
         self.__no_reg = no_reg
         
-    def buscar(self, id): #Método buscar, recibe como parametros el id del usuario
-        id_buscado = id #Variable que almacena el id que queremos comparar
-        for ids in range(self.__no_reg): #Ciclo que recorre el arreglo hasta los objetos que hayamos decidido meter en el
-            if self.__registro[ids].id == id_buscado: #Comparamos cada id de los objetos con el id presentado
-                return ids #Si la comparación es verdadera entonces retornamos el indice de dicho objeto
+    def buscar(self, id_buscado): #Método buscar, recibe como parametros el id del usuario
+        for ids in range(self.__no_reg):
+            if isinstance(self.__registro[ids], Usuario):
+                if self.__registro[ids].getId() == id_buscado: #Comparamos cada id de los objetos con el id presentado
+                    return ids #Si la comparación es verdadera entonces retornamos el indice de dicho objeto
         else: #En caso de no haberse encontrado comparación similar
             return -1 #Retornamos menos uno
 
@@ -21,7 +21,7 @@ class Agenda():
             return True #Retorna True porque el nuevo objeto fue agregado con exito
     
     def eliminar(self, id): #Método que elimina objetos
-        if self.buscar(id) == -1: #Usando el método buscar se fija si el objeto esta en el arreglo, si no esta retorna Falso
+        if self.buscar(id) == -1: #Us0ando el método buscar se fija si el objeto esta en el arreglo, si no esta retorna Falso
             return False #Retorna Falso porque no se encontraba el objeto
         else: #En caso de que el objeto este
             indice_eliminado = self.buscar(id)
