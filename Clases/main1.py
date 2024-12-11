@@ -1,7 +1,7 @@
-from Clases.Usuario import Usuario
 from Clases.Fecha import Fecha
 from Clases.Direccion import Direccion
 from Clases.Agenda import Agenda
+from Clases.Usuario import Usuario
 
 u1 = Usuario("David", 1, "Valledupar", 3134697894, "david@recocha.edu.co")
 f1 = Fecha(13, 11, 2006)
@@ -39,3 +39,5 @@ u5.setFechaNacimiento(f5)
 u5.setDir(d5)
 
 A1 = Agenda([u1, u2, u3, u4, u5], 5)
+
+print(A1.buscar(3))
