@@ -1,6 +1,4 @@
-from Clases.Usuario import *
-
-
+from Clases.Usuario import Usuario
 class Agenda():
     def __init__(self, registro = None, no_reg = 0):
         self.__registro = registro if registro is not None else []
@@ -26,21 +24,19 @@ class Agenda():
         if Agenda.buscar(id) == -1: #Usando el método buscar se fija si el objeto esta en el arreglo, si no esta retorna Falso
             return False #Retorna Falso porque no se encontraba el objeto
         else: #En caso de que el objeto este
-            indice_eliminado = buscar(id)
+            indice_eliminado = Agenda.buscar(id)
             for i in range(indice_eliminado, Agenda.__no_reg-2): #Se empieza a iterar desde el indice del objeto eliminado
                 Agenda.__registro[i] = Agenda.__registro[i+1] #Se mueven los objetos hacia la ¿izquierda?
             Agenda.__registro[Agenda.__no_reg-1] = None #El ultimo valor del arreglo ya no esta pues todo fue ocupado por los demas valores
             Agenda.__no_reg -= 1 #Disminuimos el tamaño del arreglo
             return True #Devolvemos Verdadero tras haberse completado todo el proceso
         
-    def toFile(u):
-        fichero = open("agenda.txt", "w")
-        for i in range(Agenda.__no_reg):
-           linea = Usuario.__str__(Agenda.__registro[i])
-           fichero.write(linea + "\n")
-        fichero.close()
+    def toFile(self, archivo):
+        f = open(archivo, "w")
+        for objeto in Agenda.__registro:
+            if objeto != None:
+                f.write(f"{Usuario.getNombre(), Usuario.getId(), Usuario.getFechaNacimiento(), Usuario.getCiudadNacimiento(), Usuario.getTelefono(), Usuario.getEmail(), Usuario.getDir()}")
+        f.close()
     
-   
-
-
-    
+    def importar():
+        pass
